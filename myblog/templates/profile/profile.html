@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li><a href="/admin">Admin panel</a></li>
+    <li><a href="/">Main</a></li>
+    <li><a href="register/">register</a></li>
+  </ul>
+  <h1>account</h1>
+  <ul>
+    <li><h3>{{ user.username }}</h3></li>
+    {% if user.email %}
+      <li><h4>{{ user.email }}</h4></li>
+    {% endif %}
+    {% if user.first_name %}
+      <li><h5>{{ user.first_name }}</h5></li>
+    {% endif %}
+    {% if user.last_name %}
+      <li><h5>{{ user.last_name }}</h5></li>
+    {% endif %}
+  </ul>
+  <form method="post" action="{% url 'logout' %}?next=profile">
+    {% csrf_token %}
+    <button type="submit">logout</button>
+  </form>
+</body>
+</html>

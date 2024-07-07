@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>registration</title>
+</head>
+<!-- <body class="text-center">
+    
+    <main class="form-signin">
+      <form>
+        <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Будь ласка, увійдіть</font></font></h1>
+    
+        <div class="form-floating">
+          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+          <label for="floatingInput"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Адреса електронної пошти</font></font></label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+          <label for="floatingPassword"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пароль</font></font></label>
+        </div>
+    
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пам'ятай мене
+          </font></font></label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Увійти</font></font></button>
+        <p class="mt-5 mb-3 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© 2017–2021</font></font></p>
+      </form>
+    </main>
+</body> -->
+
+<body>
+    <h1>registration</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="name" required="">
+        <input type="password" name="password1" placeholder="password" required="">
+        <input type="password" name="password2" placeholder="password" required="">
+        <input type="email" name="email" placeholder="email" required="">
+        {{ form.errors }}
+        <button type="submit">registration</button>
+    </form>
+</body>
+</html>
